@@ -1,9 +1,7 @@
 
 import javax.swing.JFrame;
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import project.*;
@@ -37,8 +35,8 @@ public class FrameTest {
      */
     @Test
     public void test2() {
-        assertTrue(frame.getCountOfNumbers() > 4 && frame.getCountOfNumbers() < 30);
-        assertTrue(frame.getNumbersCollection().getSize() == frame.getCountOfNumbers());
+        assertTrue(Frame.getCountOfNumbers() > 4 && Frame.getCountOfNumbers() < 30);
+        assertTrue(frame.getBricksCollection().size() == Frame.getCountOfNumbers());
     }
 
     @After
