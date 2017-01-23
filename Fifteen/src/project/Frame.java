@@ -1,7 +1,9 @@
 package project;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  *
@@ -11,19 +13,15 @@ public class Frame extends JFrame {
 
 //###################-ATRIBUTY-###################
 //==========KONSTANTNI ATRIBUTY TRIDY==========
-    private final static int COUNT_OF_NUMBERS = 15;
 //===========PROMENNE ATRIBUTY TRIDY===========
 //========KONSTANTNI ATRIBUTY INSTANCI=========
     private final ArrayList<Brick> brickCollection = new ArrayList<>();
 //=========PROMENNE ATRIBUTY INSTANCI==========
     private Brick brick;
+    private JPanel panel;
 //####################-STATIC-####################
 //============STATICKY KONSTRUKTOR=============
 //=========STATICKE PRISTUPOVE METODY==========
-
-    public static int getCountOfNumbers() {
-        return COUNT_OF_NUMBERS;
-    }
 //==============STATICKE METODY================
 //=================MAIN METODA=================
 
@@ -53,19 +51,29 @@ public class Frame extends JFrame {
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Fifteen");
-        setSize(500, 500);
+        setSize(16 + Game.getBrickWidth() * 4, 38 + Game.getBrickHeight() * 4);
         setLocationRelativeTo(null);
     }
 
     private void setComponents() {
-
+        panel = new JPanel();
+        panel.setLayout(null);
+        panel.setSize(getSize());
+        panel.setBackground(Color.cyan);
+        add(panel);
     }
 
     private void setBricks() {
-        for (int i = 0; i < COUNT_OF_NUMBERS; i++) {
-            brick = new Brick(String.valueOf(i));
-            brickCollection.add(brick);
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                brick = new Brick(String.valueOf(i));
+                panel.add(brick);
+                brick.setLocation(i * Game.getBrickWidth(), j * Game.getBrickHeight());
+                brickCollection.add(brick);
+            }
         }
+        panel.remove(brickCollection.size() - 1);
+        brickCollection.remove(brickCollection.size() - 1);
     }
 //############-SOUKROME KONSTRUKTORY-#############
 //===============SOUKROME TRIDY================

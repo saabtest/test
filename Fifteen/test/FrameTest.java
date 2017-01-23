@@ -35,8 +35,8 @@ public class FrameTest {
      */
     @Test
     public void test2() {
-        assertTrue(Frame.getCountOfNumbers() > 4 && Frame.getCountOfNumbers() < 30);
-        assertTrue(frame.getBricksCollection().size() == Frame.getCountOfNumbers());
+        assertTrue(Game.getCountOfNumbers() > 4 && Game.getCountOfNumbers() < 30);
+        assertTrue(frame.getBricksCollection().size() == Game.getCountOfNumbers());
     }
 
     @After

@@ -1,5 +1,7 @@
 package project;
 
+import java.awt.Color;
+import java.awt.Graphics;
 import javax.swing.JComponent;
 
 /**
@@ -47,6 +49,13 @@ public class Brick extends JComponent {
         setLocation(getX() - getWidth(), getY());
     }
 
+    @Override
+    public void paint(Graphics g) {
+        g.setColor(Color.green);
+        g.fillRect(0, 0, getWidth(), getHeight());
+        g.setColor(Color.black);
+        g.drawRect(0, 0, getWidth() - 2, getHeight() - 2);
+    }
 //###############-SOUKROME METODY-################
 //=====STATICKE SOUKROME A POMOCNE METODY======
 //==========SOUKROME A POMOCNE METODY==========

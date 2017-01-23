@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import project.Brick;
+import project.Game;
 
 /**
  *
@@ -50,11 +51,11 @@ public class BrickTest {
         frame.add(brick);
         assertTrue(brick.getX() == 0 && brick.getY() == 0);
         brick.moveRight();
-        assertTrue(brick.getX() == brick.getWidth() && brick.getY() == 0);
+        assertTrue(brick.getX() == Game.getBrickWidth() && brick.getY() == 0);
         brick.moveLeft();
         assertTrue(brick.getX() == 0 && brick.getY() == 0);
         brick.moveDown();
-        assertTrue(brick.getX() == 0 && brick.getY() == brick.getHeight());
+        assertTrue(brick.getX() == 0 && brick.getY() == Game.getBrickHeight());
         brick.moveUp();
         assertTrue(brick.getX() == 0 && brick.getY() == 0);
     }
@@ -63,7 +64,7 @@ public class BrickTest {
     public void tearDown() {
         brick = null;
         fakeBrick = null;
-        
+
         frame = null;
     }
 }

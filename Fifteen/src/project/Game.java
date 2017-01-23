@@ -10,6 +10,7 @@ public class Game {
 //==========KONSTANTNI ATRIBUTY TRIDY==========
     private final static int WIDTH_OF_BRICK = 50;
     private final static int HEIGHT_OF_BRICK = 50;
+    private final static int COUNT_OF_NUMBERS = 15;
 //===========PROMENNE ATRIBUTY TRIDY===========
 //========KONSTANTNI ATRIBUTY INSTANCI=========
 //=========PROMENNE ATRIBUTY INSTANCI==========
@@ -23,6 +24,10 @@ public class Game {
 
     public static int getBrickHeight() {
         return HEIGHT_OF_BRICK;
+    }
+
+    public static int getCountOfNumbers() {
+        return COUNT_OF_NUMBERS;
     }
 //==============STATICKE METODY================
 //=================MAIN METODA=================
