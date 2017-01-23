@@ -51,8 +51,9 @@ public class Frame extends JFrame {
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Fifteen");
-        setSize(16 + Game.getBrickWidth() * 4, 38 + Game.getBrickHeight() * 4);
+        setSize(6 + Game.getBrickWidth() * 4, 28 + Game.getBrickHeight() * 4);
         setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     private void setComponents() {

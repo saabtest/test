@@ -17,6 +17,8 @@ public class Game {
 //=========PROMENNE ATRIBUTY INSTANCI==========
     private int xParameterOfEmptyPlace;
     private int yParameterOfEmptyPlace;
+    private int lastBrickX;
+    private int lastBrickY;
 //####################-STATIC-####################
 //============STATICKY KONSTRUKTOR=============
 //=========STATICKE PRISTUPOVE METODY==========
@@ -62,6 +64,24 @@ public class Game {
         return xParameterOfEmptyPlace == x || yParameterOfEmptyPlace == y;
     }
 //===================METODY====================
+
+    public void moveEnableBrick(Brick brick) {
+        if (isBrickEnableToMove(brick.getX(), brick.getY())) {
+            lastBrickX = brick.getX();
+            lastBrickY = brick.getY();
+            if (xParameterOfEmptyPlace > brick.getX()) {
+                brick.moveRight();
+            } else if (xParameterOfEmptyPlace < brick.getX()) {
+                brick.moveLeft();
+            } else if (yParameterOfEmptyPlace < brick.getY()) {
+                brick.moveUp();
+            } else if (yParameterOfEmptyPlace > brick.getY()) {
+                brick.moveDown();
+            }
+            xParameterOfEmptyPlace = lastBrickX;
+            yParameterOfEmptyPlace = lastBrickY;
+        }
+    }
 //###############-SOUKROME METODY-################
 //=====STATICKE SOUKROME A POMOCNE METODY======
 //==========SOUKROME A POMOCNE METODY==========

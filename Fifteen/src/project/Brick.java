@@ -20,6 +20,7 @@ public class Brick extends JComponent {
 //=========PROMENNE ATRIBUTY INSTANCI==========
 
     private final JLabel labelForNumber;
+    private final Brick brick;
 //####################-STATIC-####################
 //============STATICKY KONSTRUKTOR=============
 //=========STATICKE PRISTUPOVE METODY==========
@@ -33,6 +34,7 @@ public class Brick extends JComponent {
 //=================KONSTRUKTOR=================
 
     public Brick(String name) {
+        brick = this;
         setName(name);
         setSize(Game.getBrickWidth(), Game.getBrickHeight());
 
@@ -45,11 +47,7 @@ public class Brick extends JComponent {
         addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent evt) {
-                if (Game.getGame().isBrickEnableToMove(getX(), getY())) {
-                    System.out.println("true");
-                } else {
-                    System.out.println("FALSE");
-                }
+                Game.getGame().moveEnableBrick(brick);
             }
         });
     }

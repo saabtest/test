@@ -1,6 +1,4 @@
 
-import java.util.Iterator;
-import static javax.management.Query.value;
 import javax.swing.JFrame;
 import org.junit.After;
 import org.junit.Before;
@@ -55,6 +53,7 @@ public class FrameTest {
 
     @After
     public void tearDown() {
+        frame.dispose();
         frame = null;
     }
 }

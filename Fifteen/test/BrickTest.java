@@ -80,7 +80,7 @@ public class BrickTest {
     public void tearDown() {
         brick = null;
         fakeBrick = null;
-
+        frame.dispose();
         frame = null;
     }
 }
