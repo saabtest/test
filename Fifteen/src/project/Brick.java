@@ -31,6 +31,22 @@ public class Brick extends JComponent {
 //=================KONSTRUKTOR=================
 //=============PRISTUPOVE METODY===============
 //===================METODY====================
+    public void moveUp() {
+        setLocation(getX(), getY() - getHeight());
+    }
+
+    public void moveDown() {
+        setLocation(getX(), getY() + getHeight());
+    }
+
+    public void moveRight() {
+        setLocation(getX() + getWidth(), getY());
+    }
+
+    public void moveLeft() {
+        setLocation(getX() - getWidth(), getY());
+    }
+
 //###############-SOUKROME METODY-################
 //=====STATICKE SOUKROME A POMOCNE METODY======
 //==========SOUKROME A POMOCNE METODY==========
