@@ -1,4 +1,6 @@
 
+import java.util.Iterator;
+import static javax.management.Query.value;
 import javax.swing.JFrame;
 import org.junit.After;
 import org.junit.Before;
@@ -37,6 +39,18 @@ public class FrameTest {
     public void test2() {
         assertTrue(Game.getCountOfNumbers() > 4 && Game.getCountOfNumbers() < 30);
         assertTrue(frame.getBricksCollection().size() == Game.getCountOfNumbers());
+    }
+
+    /**
+     * Testing names of bricks
+     */
+    @Test
+    public void test3() {
+        int number = 1;
+        for (Brick brick : frame.getBricksCollection()) {
+            assertTrue(brick.getName().equals(String.valueOf(number)));
+            number++;
+        }
     }
 
     @After

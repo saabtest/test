@@ -39,7 +39,7 @@ public class Frame extends JFrame {
     }
 //=============PRISTUPOVE METODY===============
 
-    public ArrayList getBricksCollection() {
+    public ArrayList<Brick> getBricksCollection() {
         return brickCollection;
     }
 //===================METODY====================
