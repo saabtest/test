@@ -60,6 +60,22 @@ public class BrickTest {
         assertTrue(brick.getX() == 0 && brick.getY() == 0);
     }
 
+    /**
+     * Testing if is a brick movable (just return true or false value)
+     */
+    @Test
+    public void test3() {
+        brick.setLocation(0, 0);
+        Game.getGame().setParametersOfEmptyPlace(0, 0);
+        assertTrue(Game.getGame().isBrickEnableToMove(brick.getX(), brick.getY()));
+        Game.getGame().setParametersOfEmptyPlace(50, 0);
+        assertTrue(Game.getGame().isBrickEnableToMove(brick.getX(), brick.getY()));
+        Game.getGame().setParametersOfEmptyPlace(0, 50);
+        assertTrue(Game.getGame().isBrickEnableToMove(brick.getX(), brick.getY()));
+        Game.getGame().setParametersOfEmptyPlace(50, 50);
+        assertFalse(Game.getGame().isBrickEnableToMove(brick.getX(), brick.getY()));
+    }
+
     @After
     public void tearDown() {
         brick = null;

@@ -3,6 +3,8 @@ package project;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 
@@ -39,6 +41,17 @@ public class Brick extends JComponent {
         labelForNumber.setFont(new Font("Times new Roman", 1, 30));
         labelForNumber.setHorizontalAlignment(0);
         add(labelForNumber);
+
+        addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent evt) {
+                if (Game.getGame().isBrickEnableToMove(getX(), getY())) {
+                    System.out.println("true");
+                } else {
+                    System.out.println("FALSE");
+                }
+            }
+        });
     }
 //=============PRISTUPOVE METODY===============
 //===================METODY====================

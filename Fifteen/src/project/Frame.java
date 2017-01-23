@@ -72,6 +72,8 @@ public class Frame extends JFrame {
                 brickCollection.add(brick);
             }
         }
+        Game.getGame().setParametersOfEmptyPlace(brickCollection.get(brickCollection.size() - 1).getX(),
+                brickCollection.get(brickCollection.size() - 1).getY());
         panel.remove(brickCollection.size() - 1);
         brickCollection.remove(brickCollection.size() - 1);
     }
