@@ -1,25 +1,23 @@
 package project;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import javax.swing.JComponent;
+import javax.swing.JLabel;
 
 /**
  *
  * @author Lubor Pesek
  */
 public class Brick extends JComponent {
-
-    public Brick(String name) {
-        setName(name);
-        setSize(Game.getBrickWidth(), Game.getBrickHeight());
-    }
-
 //###################-ATRIBUTY-###################
 //==========KONSTANTNI ATRIBUTY TRIDY==========
 //===========PROMENNE ATRIBUTY TRIDY===========
 //========KONSTANTNI ATRIBUTY INSTANCI=========
 //=========PROMENNE ATRIBUTY INSTANCI==========
+
+    private final JLabel labelForNumber;
 //####################-STATIC-####################
 //============STATICKY KONSTRUKTOR=============
 //=========STATICKE PRISTUPOVE METODY==========
@@ -31,8 +29,20 @@ public class Brick extends JComponent {
 //    }
 //###################-INSTANCE-###################
 //=================KONSTRUKTOR=================
+
+    public Brick(String name) {
+        setName(name);
+        setSize(Game.getBrickWidth(), Game.getBrickHeight());
+
+        labelForNumber = new JLabel(name);
+        labelForNumber.setSize(getWidth(), getHeight());
+        labelForNumber.setFont(new Font("Times new Roman", 1, 30));
+        labelForNumber.setHorizontalAlignment(0);
+        add(labelForNumber);
+    }
 //=============PRISTUPOVE METODY===============
 //===================METODY====================
+
     public void moveUp() {
         setLocation(getX(), getY() - getHeight());
     }
@@ -50,7 +60,7 @@ public class Brick extends JComponent {
     }
 
     @Override
-    public void paint(Graphics g) {
+    public void paintComponent(Graphics g) {
         g.setColor(Color.green);
         g.fillRect(0, 0, getWidth(), getHeight());
         g.setColor(Color.black);

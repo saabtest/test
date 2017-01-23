@@ -66,9 +66,9 @@ public class Frame extends JFrame {
     private void setBricks() {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                brick = new Brick(String.valueOf(i));
+                brick = new Brick(String.valueOf((i * 4) + j + 1));
                 panel.add(brick);
-                brick.setLocation(i * Game.getBrickWidth(), j * Game.getBrickHeight());
+                brick.setLocation(j * Game.getBrickWidth(), i * Game.getBrickHeight());
                 brickCollection.add(brick);
             }
         }
