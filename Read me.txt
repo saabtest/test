@@ -1,0 +1,5 @@
+There are 4 steps remaining to finish this project:
+- Fix "multi mooving" which means if user select the brick with large distance, all bricks should move. Now its error move, but its prepare to complete it
+- Check if bricks are in right position and check if user win the game.
+- Shuffle all bricks (teory is that I always change two randomed bricks even empty position. If i change always two of them, its possible to complete this puzzle)
+- Color bricks after moving to correct position

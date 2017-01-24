@@ -11,7 +11,7 @@ public class Game {
     private final static int WIDTH_OF_BRICK = 50;
     private final static int HEIGHT_OF_BRICK = 50;
     private final static int COUNT_OF_NUMBERS = 15;
-    private final static int SPEED_OF_MOVING = 1000;
+    private final static int SPEED_OF_MOVING = 500;
 //===========PROMENNE ATRIBUTY TRIDY===========
     private static Game game;
 //========KONSTANTNI ATRIBUTY INSTANCI=========

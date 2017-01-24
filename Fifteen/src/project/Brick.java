@@ -24,6 +24,7 @@ public class Brick extends JComponent implements Runnable {
 //=========PROMENNE ATRIBUTY INSTANCI==========
 
     private Thread thread;
+    private Color positionColor = Color.gray;
     private int movingToX;
     private int movingToY;
 //####################-STATIC-####################
@@ -81,7 +82,7 @@ public class Brick extends JComponent implements Runnable {
 
     @Override
     public void paintComponent(Graphics g) {
-        g.setColor(Color.green);
+        g.setColor(positionColor);
         g.fillRect(0, 0, getWidth(), getHeight());
         g.setColor(Color.black);
         g.drawRect(0, 0, getWidth() - 2, getHeight() - 2);
@@ -113,6 +114,20 @@ public class Brick extends JComponent implements Runnable {
             thread = new Thread(this);
             thread.start();
         }
+    }
+
+    public void setColorOfRightPosition() {
+        positionColor = Color.yellow;
+        repaint();
+    }
+
+    public void setColorOfWrongPosition() {
+        positionColor = Color.gray;
+        repaint();
+    }
+
+    public void rightPosition() {
+        setColorOfRightPosition();
     }
 //###############-SOUKROME METODY-################
 //=====STATICKE SOUKROME A POMOCNE METODY======
