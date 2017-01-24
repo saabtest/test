@@ -7,6 +7,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import project.Brick;
 import project.Game;
+import tools.Delay;
 
 /**
  *
@@ -16,6 +17,7 @@ public class BrickTest {
 
     private Brick brick, fakeBrick;
     private JFrame frame;
+    private int time;
 
     @Before
     public void setUp() {
@@ -27,6 +29,8 @@ public class BrickTest {
         frame.setVisible(true);
         frame.setSize(brick.getWidth() * 3, brick.getHeight() * 3);
         frame.setLayout(null);
+
+        time = Game.getSpeedOfMoving() + 150;
     }
 
     /**
@@ -51,12 +55,16 @@ public class BrickTest {
         frame.add(brick);
         assertTrue(brick.getX() == 0 && brick.getY() == 0);
         brick.moveRight();
+        Delay.getDelay().wait(time);
         assertTrue(brick.getX() == Game.getBrickWidth() && brick.getY() == 0);
         brick.moveLeft();
+        Delay.getDelay().wait(time);
         assertTrue(brick.getX() == 0 && brick.getY() == 0);
         brick.moveDown();
+        Delay.getDelay().wait(time);
         assertTrue(brick.getX() == 0 && brick.getY() == Game.getBrickHeight());
         brick.moveUp();
+        Delay.getDelay().wait(time);
         assertTrue(brick.getX() == 0 && brick.getY() == 0);
     }
 
